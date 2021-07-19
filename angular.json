@@ -17,13 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "public",
+            "outputPath": "public/assets",
             "index": "resources/public/index.html",
             "main": "resources/app/main.ts",
             "polyfills": "resources/app/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "resources/app/assets"
+                {
+                    "glob": "**/*",
+                    "input": "resources/app/assets",
+                    "output": "/"
+                }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
